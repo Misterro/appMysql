@@ -1,0 +1,36 @@
+version: "3"
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: users
+      MYSQL_USER: App42PaaS
+      MYSQL_PASSWORD: app9456
+
+  adminer:
+       image: adminer
+       restart: always
+       ports:
+         - 8082:8080
+
+  build:
+    build: .
+    volumes:
+      - type: volume
+        source: war
+        target: appMysql/target
+
+  web:
+    image: tomcat:9.0.20-jre8-alpine
+    volumes:
+      - type: volume
+        source: war
+        target: /usr/local/tomcat/webapps/
+    ports:
+      - 8084:8080
+    depends_on:
+      - db
+      - adminer
