@@ -21,7 +21,7 @@ services:
     volumes:
       - type: volume
         source: war
-        target: appMysql/target
+        target: target
 
   web:
     image: tomcat:9.0.20-jre8-alpine
