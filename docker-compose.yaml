@@ -1,9 +1,7 @@
 version: "3.2"
 services:
   db:
-    image: mysql
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
+    image: mariadb:10.1
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: users
