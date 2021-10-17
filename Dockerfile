@@ -1,4 +1,4 @@
-FROM maven
+FROM maven:3.5.0-ibmjava-8
 
 RUN git clone https://github.com/Misterro/appMysql.git
 ADD WebContent/Config.properties appMysql/WebContent
