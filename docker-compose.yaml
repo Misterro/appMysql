@@ -1,4 +1,4 @@
-version: "3"
+version: "3.2"
 services:
   db:
     image: mysql
@@ -19,16 +19,16 @@ services:
   build:
     build: .
     volumes:
-      type: volume
-      source: war
-      target: appMysql/target
+      - type: volume
+        source: war
+        target: appMysql/target
 
   web:
     image: tomcat:9.0.20-jre8-alpine
     volumes:
-      type: volume
-      source: war
-      target: /usr/local/tomcat/webapps/
+      - type: volume
+        source: war
+        target: /usr/local/tomcat/webapps/
     ports:
       - 8084:8080
     depends_on:
