@@ -7,6 +7,8 @@ services:
       MYSQL_DATABASE: users
       MYSQL_USER: App42PaaS
       MYSQL_PASSWORD: app9456
+    ports:
+      - 3306:3306
 
   adminer:
        image: adminer
