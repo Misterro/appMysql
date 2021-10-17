@@ -5,10 +5,10 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: users
-      MYSQL_USER: App42PaaS
-      MYSQL_PASSWORD: app9456
+      - MYSQL_ROOT_PASSWORD: example
+      - MYSQL_DATABASE: users
+      - MYSQL_USER: App42PaaS
+      - MYSQL_PASSWORD: app9456
 
   adminer:
        image: adminer
