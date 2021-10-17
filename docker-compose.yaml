@@ -35,3 +35,6 @@ services:
       - db
       - adminer
       - build
+
+volumes:
+  war:
