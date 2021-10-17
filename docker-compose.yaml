@@ -6,7 +6,6 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: users
       MYSQL_USER: App42PaaS
       MYSQL_PASSWORD: app9456
 
