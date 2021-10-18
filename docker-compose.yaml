@@ -3,6 +3,7 @@ services:
   db:
     image: mariadb:10.1
     environment:
+      MYSQL_DATABASE: users
       MYSQL_ROOT_PASSWORD: example
       MYSQL_USER: App42PaaS
       MYSQL_PASSWORD: app9456
